@@ -33,7 +33,13 @@ const StyledButtonContainer = styled.div`
     }
 `;
 
-const Pagination = ({ perPage = 5, data = [] }) => {
+const Pagination = ({
+    perPage = 5,
+    data = [],
+}: {
+    perPage?: number;
+    data: unknown[];
+}) => {
     const totalNumberOfPages = Math.ceil(data?.length / perPage);
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -46,7 +52,7 @@ const Pagination = ({ perPage = 5, data = [] }) => {
         setCurrentPage((prev) => prev - 1);
     };
 
-    const handleOnPageNumberClick = (pageNumber) => {
+    const handleOnPageNumberClick = (pageNumber: number) => {
         setCurrentPage(pageNumber);
     };
 

@@ -8,7 +8,7 @@ const StyledPostContent = styled.div`
     padding: 12px;
 `;
 
-const PostContent = ({ contentNumber }) => {
+const PostContent = ({ contentNumber }: { contentNumber: number }) => {
     return (
         <StyledPostContent>
             {contentNumber}. Lorem ipsum dolor sit amet consectetur adipisicing

@@ -13,7 +13,7 @@ const StyledSliderTrack = styled.div`
     cursor: pointer;
 `;
 
-const StyledSliderActiveTrack = styled.div`
+const StyledSliderActiveTrack = styled.div<{ $activeTrack?: number }>`
     position: absolute;
     width: ${(props) => props.$activeTrack || 0}%;
     height: 100%;
@@ -21,7 +21,7 @@ const StyledSliderActiveTrack = styled.div`
     border-radius: inherit;
 `;
 
-const StyledSliderThumb = styled.div`
+const StyledSliderThumb = styled.div<{ $thumbPosition?: number }>`
     width: 24px;
     height: 24px;
     background-color: #0000ee;
@@ -34,16 +34,16 @@ const StyledSliderThumb = styled.div`
 `;
 
 const Slider = ({ minimumRange = 0, maximumRange = 100 }) => {
-    const sliderRef = useRef(null);
+    const sliderRef = useRef<HTMLDivElement>(null);
 
     const [isDraggingSlide, setIsDraggingSlide] = useState(false);
     const [sliderValue, setSliderValue] = useState(minimumRange);
 
     const setSliderPercentageValue = useCallback(
-        (event) => {
+        (event: React.MouseEvent<HTMLDivElement> | MouseEvent) => {
             const { clientX } = event || {};
 
-            const { left, width } =
+            const { left = 0, width = 0 } =
                 sliderRef?.current?.getBoundingClientRect() || {};
 
             const value = Math.floor(((clientX - left) / width) * maximumRange);
@@ -55,19 +55,19 @@ const Slider = ({ minimumRange = 0, maximumRange = 100 }) => {
         [maximumRange, minimumRange]
     );
 
-    const handleOnTrackClick = (event) => {
+    const handleOnTrackClick = (event: React.MouseEvent<HTMLDivElement>) => {
         event?.stopPropagation();
         setSliderPercentageValue(event);
         setIsDraggingSlide(false);
     };
 
-    const handleOnMouseDown = (event) => {
+    const handleOnMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
         event.preventDefault();
         setIsDraggingSlide(true);
     };
 
     useEffect(() => {
-        const handleMouseMove = (event) => {
+        const handleMouseMove = (event: MouseEvent) => {
             if (isDraggingSlide) {
                 setSliderPercentageValue(event);
             }
