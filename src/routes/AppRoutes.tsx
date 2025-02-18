@@ -4,6 +4,7 @@ import TaskHome from "../screens/TaskHome";
 import StarRatingPage from "../screens/StarRatingPage";
 import InfiniteScroll from "../screens/InfiniteScroll";
 import CityHighlight from "../screens/CityHighlight";
+import Todo from "../screens/Todo";
 
 const AppRoutes: RouteObject[] = [
     {
@@ -25,6 +26,10 @@ const AppRoutes: RouteObject[] = [
     {
         path: "city-highlight",
         element: <CityHighlight />,
+    },
+    {
+        path: "todo-app",
+        element: <Todo />,
     },
 ];
 
