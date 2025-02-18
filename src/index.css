@@ -1,8 +1,23 @@
+@font-face {
+    font-family: "Product Sans";
+    src: url("assets/fonts/ProductSans/Product\ Sans\ Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Product Sans";
+    src: url("assets/fonts/ProductSans/Product\ Sans\ Bold.ttf");
+    font-style: normal;
+    font-weight: 700;
+}
+
 *,
 *::after,
 *::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Product Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-display: swap;
 }
