@@ -22,3 +22,9 @@ export const experimentingArrayOptions = () => {
     // };
     // return [1, 2, 3, 4].customFilterFunction((item) => item % 2 === 0);
 };
+
+export const resolvePageName = (path?: string) =>
+    path
+        ?.split("-")
+        ?.map((elem) => elem.charAt(0).toUpperCase() + elem.slice(1))
+        ?.join(" ");

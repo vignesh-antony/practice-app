@@ -5,10 +5,15 @@ import StarRatingPage from "../screens/StarRatingPage";
 import InfiniteScroll from "../screens/InfiniteScroll";
 import CityHighlight from "../screens/CityHighlight";
 import Todo from "../screens/Todo";
+import RouterPage from "../screens/RouterPage";
 
 const AppRoutes: RouteObject[] = [
     {
         index: true,
+        element: <RouterPage />,
+    },
+    {
+        path: "home",
         element: <HomePage />,
     },
     {
