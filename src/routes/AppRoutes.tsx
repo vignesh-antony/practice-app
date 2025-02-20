@@ -6,6 +6,7 @@ import InfiniteScroll from "../screens/InfiniteScroll";
 import CityHighlight from "../screens/CityHighlight";
 import Todo from "../screens/Todo";
 import RouterPage from "../screens/RouterPage";
+import OTPContainer from "../screens/OTPContainer";
 
 const AppRoutes: RouteObject[] = [
     {
@@ -35,6 +36,10 @@ const AppRoutes: RouteObject[] = [
     {
         path: "todo-app",
         element: <Todo />,
+    },
+    {
+        path: "one-time-password",
+        element: <OTPContainer />,
     },
 ];
 
