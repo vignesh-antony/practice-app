@@ -7,6 +7,7 @@ import CityHighlight from "../screens/CityHighlight";
 import Todo from "../screens/Todo";
 import RouterPage from "../screens/RouterPage";
 import OTPContainer from "../screens/OTPContainer";
+import FolderStructure from "../screens/FolderStructure";
 
 const AppRoutes: RouteObject[] = [
     {
@@ -40,6 +41,10 @@ const AppRoutes: RouteObject[] = [
     {
         path: "one-time-password",
         element: <OTPContainer />,
+    },
+    {
+        path: "folder-structure",
+        element: <FolderStructure />,
     },
 ];
 
