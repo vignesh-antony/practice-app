@@ -8,6 +8,7 @@ import Todo from "../screens/Todo";
 import RouterPage from "../screens/RouterPage";
 import OTPContainer from "../screens/OTPContainer";
 import FolderStructure from "../screens/FolderStructure";
+import TabPage from "../screens/TabPage";
 
 const AppRoutes: RouteObject[] = [
     {
@@ -45,6 +46,10 @@ const AppRoutes: RouteObject[] = [
     {
         path: "folder-structure",
         element: <FolderStructure />,
+    },
+    {
+        path: "tabs",
+        element: <TabPage />,
     },
 ];
 
